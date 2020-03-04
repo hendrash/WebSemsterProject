@@ -1,0 +1,19 @@
+{
+  "name": "ashley",
+  "version": "1.0.0",
+  "description": "exam review",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hendrash/WebSemsterProject.git"
+  },
+  "author": "Ashley Hendrickson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hendrash/WebSemsterProject/issues"
+  },
+  "homepage": "https://github.com/hendrash/WebSemsterProject#readme"
+}
