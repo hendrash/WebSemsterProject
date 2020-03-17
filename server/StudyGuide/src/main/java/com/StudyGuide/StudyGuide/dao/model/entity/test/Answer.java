@@ -23,8 +23,9 @@ public class Answer {
     @Column(name="description")
     private String description;
 
-    @ManyToMany @Setter @Getter
-    List<Questions> questions;
+    @ManyToMany(mappedBy = "questionAnswers", cascade = CascadeType.REFRESH, fetch = FetchType.LAZY) @Setter @Getter
+    List<Questions> testQuestions;
+
 
 
 

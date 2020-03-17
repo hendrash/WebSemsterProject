@@ -1,11 +1,12 @@
 package com.StudyGuide.StudyGuide.dao.model.entity.test;
 
-import com.sun.tools.javac.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
+
 
 @Entity
 @Table(name="question")
@@ -20,7 +21,16 @@ public class Questions {
     @Getter @Setter
     private String Question;
 
-    @ManyToMany @Getter @Setter
-            
-    List<Answer> answers;
-}
+    @Getter @Setter
+    @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+            @JoinTable(
+                    name="question_answer",
+                    joinColumns = @JoinColumn(name="question_question_id"),
+                    inverseJoinColumns =@JoinColumn(name="answer_answer_id")
+            )
+    List<Answer> questionAnswers;
+
+    @ManyToMany(mappedBy = "testQuestion", cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    List<Test> questionTest;
+ }
+

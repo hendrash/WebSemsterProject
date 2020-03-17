@@ -1,10 +1,12 @@
 package com.StudyGuide.StudyGuide.dao.model.entity.user;
 
+import com.StudyGuide.StudyGuide.dao.model.entity.test.Test;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 
 @Entity
@@ -41,4 +43,11 @@ public class User {
     @Setter @Getter
     private String lastName;
 
+    @ManyToMany
+            @JoinTable(
+                    name="user_test",
+                    joinColumns = @JoinColumn(name="user_user_id"),
+                    inverseJoinColumns = @JoinColumn(name="test_test_id")
+            )
+    List<Test> userTest;
 }
