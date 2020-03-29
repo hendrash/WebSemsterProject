@@ -11,7 +11,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class StudyGuideApplication {
 
 	public static void main(String[] args) {
-
 		SpringApplication.run(StudyGuideApplication.class, args);
 	}
 

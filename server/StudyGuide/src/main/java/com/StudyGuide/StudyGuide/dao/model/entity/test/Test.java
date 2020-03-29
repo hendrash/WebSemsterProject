@@ -21,13 +21,15 @@ private Long testId;
 @Setter @Getter
 private String testName;
 
-@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY) @Getter @Setter
     @JoinTable(
             name="test_question",
             joinColumns = @JoinColumn(name="test_test_id"),
             inverseJoinColumns = @JoinColumn(name="question_question_id")
     )
 List<Questions> testQuestions;
+
+@Setter @Getter
 @ManyToMany(mappedBy = "userTest")
 List<User> testUser;
 }

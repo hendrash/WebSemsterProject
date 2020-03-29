@@ -29,8 +29,8 @@ public class Questions {
                     inverseJoinColumns =@JoinColumn(name="answer_answer_id")
             )
     List<Answer> questionAnswers;
-
-    @ManyToMany(mappedBy = "testQuestion", cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @Setter @Getter
+    @ManyToMany(mappedBy = "testQuestions", cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
     List<Test> questionTest;
  }
 

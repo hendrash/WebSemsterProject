@@ -49,5 +49,17 @@ public class User {
                     joinColumns = @JoinColumn(name="user_user_id"),
                     inverseJoinColumns = @JoinColumn(name="test_test_id")
             )
-    List<Test> userTest;
+            @Setter @Getter
+    private List<Test> userTest;
+    public User(){}
+
+    public User(Long userId, @NotNull String email, @NotNull String uname, @NotNull String password, String firstName, String lastName, List<Test> userTest) {
+        this.userId = userId;
+        this.email = email;
+        this.uname = uname;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userTest = userTest;
+    }
 }
